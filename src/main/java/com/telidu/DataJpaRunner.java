@@ -14,8 +14,8 @@ public class DataJpaRunner implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		repo.save(new Customer(1,"pranavasai","avantinagar"));
-
+		Customer c=repo.save(new Customer(1,"pranavasai","avantinagar"));
+System.out.println(c);
 	}
 
 }
