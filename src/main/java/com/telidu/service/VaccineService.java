@@ -13,7 +13,11 @@ private IVaccineRepo repo;
 	public String registerVaccineDetailes(Vaccine vaccine) {
 		// TODO Auto-generated method stub
 	Vaccine v=repo.save(vaccine);
-		return "vaccine info store with id"+v.getId();
+		return "vaccine info store with id"+ v.getId();
 		}
+public long getCount() {
+	// TODO Auto-generated method stub
+	return repo.count();
+}
 
 }

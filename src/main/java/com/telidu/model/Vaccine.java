@@ -100,9 +100,18 @@ public class Vaccine {
 		return "Vaccine [vaccineName=" + vaccineName + ", vaccineCompany=" + vaccineCompany + ", cost=" + cost + "]";
 	}
 
-	public Vaccine() {
+	
+
+	public Vaccine(String vaccineName, String vaccineCompany, int i) {
 		super();
-		// TODO Auto-generated constructor stub
+		this.vaccineName = vaccineName;
+		this.vaccineCompany = vaccineCompany;
+		this.cost = cost;
 	}
+
+	
+	
+
+	
 
 }
