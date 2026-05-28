@@ -2,6 +2,8 @@ package com.telidu.repo;
 
 import org.springframework.data.repository.CrudRepository;
 
-public interface ICustomerRepo extends CrudRepository<T, ID> {
+import com.telidu.model.Customer;
+
+public interface ICustomerRepo extends CrudRepository<Customer, Integer> {
 
 }
