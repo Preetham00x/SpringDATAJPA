@@ -102,12 +102,18 @@ public class Vaccine {
 
 	
 
-	public Vaccine(String vaccineName, String vaccineCompany, int i) {
+	public Vaccine(String vaccineName, String vaccineCompany, Double cost) {
 		super();
 		this.vaccineName = vaccineName;
 		this.vaccineCompany = vaccineCompany;
 		this.cost = cost;
 	}
+
+	public Vaccine() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 
 	
 	
