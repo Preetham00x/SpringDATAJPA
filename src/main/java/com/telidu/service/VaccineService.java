@@ -61,21 +61,21 @@ private IVaccineRepo repo;
 public void setRepo(IVaccineRepo repo) {
 	this.repo = repo;
 }
-
-@Override
-public Iterable<Vaccine> fetchVaccineInfoSorting(Boolean status, String...properties) {
-	Sort sort=Sort.by(status?Direction.ASC:Direction.DESC, properties);
-	// TODO Auto-generated method stub
-	return repo.findAll(sort);
-}
-
-@Override
-public Iterable<Vaccine> fetchVaccineInfoPagination(int PgNo, int PgSize, boolean status, String... properties) {
-	
-	PageRequest pageable=PageRequest.of( PgNo, PgSize,status?Direction.ASC:Direction.DESC, properties);
-	Page<Vaccine> page= repo.findAll(pageable);
-	return page.getContent();
-}
+//
+//@Override
+//public Iterable<Vaccine> fetchVaccineInfoSorting(Boolean status, String...properties) {
+//	Sort sort=Sort.by(status?Direction.ASC:Direction.DESC, properties);
+//	// TODO Auto-generated method stub
+//	return repo.findAll(sort);
+//}
+//
+//@Override
+//public Iterable<Vaccine> fetchVaccineInfoPagination(int PgNo, int PgSize, boolean status, String... properties) {
+//	
+//	PageRequest pageable=PageRequest.of( PgNo, PgSize,status?Direction.ASC:Direction.DESC, properties);
+//	Page<Vaccine> page= repo.findAll(pageable);
+//	return page.getContent();
+//}
 
 
 
