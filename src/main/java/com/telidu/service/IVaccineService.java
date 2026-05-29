@@ -6,6 +6,7 @@ import java.util.Optional;
 import com.telidu.model.Vaccine;
 
 public interface IVaccineService {
+	Vaccine fetchById(Integer id);
 //	String registerVaccineDetailes(Vaccine vaccine);
 //	Iterable<Vaccine> registerMultipleVaccines(Iterable<Vaccine> vaccines);
 //	Long getCount();

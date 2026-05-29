@@ -77,6 +77,12 @@ public void setRepo(IVaccineRepo repo) {
 //	return page.getContent();
 //}
 
+@Override
+public Vaccine fetchById(Integer id) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
 
 
 
