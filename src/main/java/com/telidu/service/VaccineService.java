@@ -79,19 +79,38 @@ public void setRepo(IVaccineRepo repo) {
 //}
 
 @Override
-public Vaccine fetchById(Integer id) {
+public List<Vaccine> searchByCost(Integer cost) {
 	// TODO Auto-generated method stub
-	return repo.getReferenceById(id);
+	return repo.findByCost(cost);
 }
 
 @Override
-public List<Vaccine> fetchByVaccineInfo(Vaccine vac) {
-	Example<Vaccine> example=Example.of(vac);
+public List<Vaccine> searchByCostIs(Integer cost) {
 	// TODO Auto-generated method stub
-	return repo.findAll(example);
+	return repo.findByCostIs(cost);
+}
+
+@Override
+public List<Vaccine> searchByCostEquals(Integer cost) {
+	// TODO Auto-generated method stub
+	return repo.findByCostEquals(cost);
+}
+
+
+//@Override
+//public Vaccine fetchById(Integer id) {
+//	// TODO Auto-generated method stub
+//	return repo.getReferenceById(id);
+//}
+//
+//@Override
+//public List<Vaccine> fetchByVaccineInfo(Vaccine vac) {
+//	Example<Vaccine> example=Example.of(vac);
+//	// TODO Auto-generated method stub
+//	return repo.findAll(example);}
 }
 
 
 
 
-}
+

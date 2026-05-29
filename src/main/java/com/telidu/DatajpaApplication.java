@@ -16,6 +16,9 @@ public class DatajpaApplication {
 	public static void main(String[] args) {
 	ConfigurableApplicationContext container=SpringApplication.run(DatajpaApplication.class, args);
 	VaccineService service=container.getBean(VaccineService.class);
+	service.searchByCostEquals(222).forEach(v->System.out.println(v));
+	service.searchByCost(1).forEach(v->System.out.println(v));
+	service.searchByCostIs(23).forEach(v->System.out.println(v));
 //	service.fetchVaccineInfoPagination(1, 3, true, "vaccineName").forEach(v->System.out.println(v));
 //	service.fetchVaccineInfoSorting(true,"vaccineName").forEach(v->System.out.println(v));;
 //	String status=service.registerVaccineDetailes(new Vaccine("COVSHIELD","APOLLO",23.0));
