@@ -1,5 +1,6 @@
 package com.telidu.service;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,6 +95,12 @@ public List<Vaccine> searchByCostIs(Integer cost) {
 public List<Vaccine> searchByCostEquals(Integer cost) {
 	// TODO Auto-generated method stub
 	return repo.findByCostEquals(cost);
+}
+
+@Override
+public List<Vaccine> searchByVaccineNameInAndCostBetween(Collection<String> names, Integer minCost, Integer maxCost) {
+	// TODO Auto-generated method stub
+	return repo.findByVaccineNameInAndCostBetween(names, minCost, maxCost);
 }
 
 

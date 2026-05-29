@@ -1,5 +1,6 @@
 package com.telidu.service;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,6 +10,7 @@ public interface IVaccineService {
 	public List<Vaccine> searchByCost(Integer cost);
 	public List<Vaccine> searchByCostIs(Integer cost);
 	public List<Vaccine> searchByCostEquals(Integer cost);
+	public List<Vaccine> searchByVaccineNameInAndCostBetween(Collection<String> names,Integer minCost,Integer maxCost);
 //	Vaccine fetchById(Integer id);
 //	List<Vaccine> fetchByVaccineInfo(Vaccine vac);
 	

@@ -11,6 +11,7 @@
 
 package com.telidu.repo;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -24,5 +25,6 @@ public interface IVaccineRepo extends JpaRepository<Vaccine, Integer> {
 	public List<Vaccine> findByCost(Integer cost);
 	public  List<Vaccine> findByCostIs(Integer cost);
 	public List<Vaccine> findByCostEquals(Integer cost);
+	public List<Vaccine> findByVaccineNameInAndCostBetween(Collection<String> names,Integer minCost,Integer maxCost);
 
 }
