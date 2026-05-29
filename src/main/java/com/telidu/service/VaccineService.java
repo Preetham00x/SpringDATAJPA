@@ -9,47 +9,57 @@ import com.telidu.model.Vaccine;
 import com.telidu.repo.IVaccineRepo;
 @Service
 public class VaccineService implements IVaccineService {
-@Autowired
 private IVaccineRepo repo;
-@Override
-	public String registerVaccineDetailes(Vaccine vaccine) {
-		// TODO Auto-generated method stub
-	Vaccine v=repo.save(vaccine);
-		return "vaccine info store with id"+ v.getId();
-		}
+//@Override
+//	public String registerVaccineDetailes(Vaccine vaccine) {
+//		// TODO Auto-generated method stub
+//	Vaccine v=repo.save(vaccine);
+//		return "vaccine info store with id"+ v.getId();
+//		}
+//
+//public Long getCount() {
+//	// TODO Auto-generated method stub
+//	return repo.count();
+//}
+//@Override
+//public Iterable<Vaccine> registerMultipleVaccines(Iterable<Vaccine> vaccines) {
+//	// TODO Auto-generated method stub
+//	return repo.saveAll(vaccines);
+//}
+//@Override
+//public Boolean checkAvailability(Integer id) {
+//	// TODO Auto-generated method stub
+//	return repo.existsById(id);
+//}
+//@Override
+//public Iterable<Vaccine> fetchAllVaccines() {
+//	// TODO Auto-generated method stub
+//	return repo.findAll();
+//}
+//@Override
+//public Iterable<Vaccine> fetchAllVAccinesById(Iterable<Integer> ids) {
+//	// TODO Auto-generated method stub
+//	return repo.findAllById(ids);
+//}
+//
+//@Override
+//public Iterable<Vaccine> registerMultipleVaccines(List<Vaccine> vax) {
+//	return repo.saveAll(vax);
+//}
+//
+//@Override
+//public String registerVaccineDetailes(List<Vaccine> vax) {
+//	// TODO Auto-generated method stub
+//	return null;
+//}
 
-public Long getCount() {
-	// TODO Auto-generated method stub
-	return repo.count();
-}
-@Override
-public Iterable<Vaccine> registerMultipleVaccines(Iterable<Vaccine> vaccines) {
-	// TODO Auto-generated method stub
-	return repo.saveAll(vaccines);
-}
-@Override
-public Boolean checkAvailability(Integer id) {
-	// TODO Auto-generated method stub
-	return repo.existsById(id);
-}
-@Override
-public Iterable<Vaccine> fetchAllVaccines() {
-	// TODO Auto-generated method stub
-	return repo.findAll();
-}
-@Override
-public Iterable<Vaccine> fetchAllVAccinesById(Iterable<Integer> ids) {
-	// TODO Auto-generated method stub
-	return repo.findAllById(ids);
+@Autowired
+public void setRepo(IVaccineRepo repo) {
+	this.repo = repo;
 }
 
 @Override
-public Iterable<Vaccine> registerMultipleVaccines(List<Vaccine> vax) {
-	return repo.saveAll(vax);
-}
-
-@Override
-public String registerVaccineDetailes(List<Vaccine> vax) {
+public Iterable<Vaccine> fetchVaccineInfoSOrting(Boolean status, String... properties) {
 	// TODO Auto-generated method stub
 	return null;
 }
