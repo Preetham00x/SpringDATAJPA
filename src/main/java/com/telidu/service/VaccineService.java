@@ -3,6 +3,10 @@ package com.telidu.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.telidu.model.Vaccine;
@@ -59,10 +63,21 @@ public void setRepo(IVaccineRepo repo) {
 }
 
 @Override
-public Iterable<Vaccine> fetchVaccineInfoSOrting(Boolean status, String... properties) {
+public Iterable<Vaccine> fetchVaccineInfoSorting(Boolean status, String...properties) {
+	Sort sort=Sort.by(status?Direction.ASC:Direction.DESC, properties);
 	// TODO Auto-generated method stub
-	return null;
+	return repo.findAll(sort);
 }
+
+@Override
+public Iterable<Vaccine> fetchVaccineInfoPagination(int PgNo, int PgSize, boolean status, String... properties) {
+	
+	PageRequest pageable=PageRequest.of( PgNo, PgSize,status?Direction.ASC:Direction.DESC, properties);
+	Page<Vaccine> page= repo.findAll(pageable);
+	return page.getContent();
+}
+
+
 
 
 }

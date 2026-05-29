@@ -15,7 +15,7 @@ public interface IVaccineService {
 //	String registerVaccineDetailes(List<Vaccine> vax);
 //	Iterable<Vaccine> registerMultipleVaccines(List<Vaccine> vax);
 //	Optional<Vaccine> fetchVaccineById();
-	Iterable<Vaccine> fetchVaccineInfoSOrting(Boolean status,String... properties);
-	
+	Iterable<Vaccine> fetchVaccineInfoSorting(Boolean status,String... properties);
+	Iterable<Vaccine> fetchVaccineInfoPagination(int PgNo,int PgSize,boolean status,String... properties);
 
 }
