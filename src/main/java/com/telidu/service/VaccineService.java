@@ -3,6 +3,7 @@ package com.telidu.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -80,7 +81,14 @@ public void setRepo(IVaccineRepo repo) {
 @Override
 public Vaccine fetchById(Integer id) {
 	// TODO Auto-generated method stub
-	return null;
+	return repo.getReferenceById(id);
+}
+
+@Override
+public List<Vaccine> fetchByVaccineInfo(Vaccine vac) {
+	Example<Vaccine> example=Example.of(vac);
+	// TODO Auto-generated method stub
+	return repo.findAll(example);
 }
 
 
