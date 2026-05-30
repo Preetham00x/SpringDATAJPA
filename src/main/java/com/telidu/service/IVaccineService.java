@@ -5,16 +5,19 @@ import java.util.List;
 import java.util.Optional;
 
 import com.telidu.model.Vaccine;
-import com.telidu.view.ResultView;
+import com.telidu.view.ResultView1;
+import com.telidu.view.View;
 
 public interface IVaccineService {
-	List<ResultView> searchByCostLessThan(Integer cost);
+	public <T extends View> List<T> searchByCostLessThan(Integer cost, Class<T> cls);
 //	public List<Vaccine> searchByCost(Integer cost);
 //	public List<Vaccine> searchByCostIs(Integer cost);
 //	public List<Vaccine> searchByCostEquals(Integer cost);
 //	public List<Vaccine> searchByVaccineNameInAndCostBetween(Collection<String> names,Integer minCost,Integer maxCost);
 //	Vaccine fetchById(Integer id);
 //	List<Vaccine> fetchByVaccineInfo(Vaccine vac);
+
+	
 	
 //	String registerVaccineDetailes(Vaccine vaccine);
 //	Iterable<Vaccine> registerMultipleVaccines(Iterable<Vaccine> vaccines);

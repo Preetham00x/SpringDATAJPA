@@ -11,6 +11,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 import com.telidu.model.Vaccine;
 import com.telidu.service.VaccineService;
+import com.telidu.view.ResultView1;
 
 @SpringBootApplication
 public class DatajpaApplication {
@@ -18,8 +19,9 @@ public class DatajpaApplication {
 	public static void main(String[] args) {
 	ConfigurableApplicationContext container=SpringApplication.run(DatajpaApplication.class, args);
 	VaccineService service=container.getBean(VaccineService.class);
-	service.searchByCostLessThan(1000).forEach(v->System.out.println(v.getVaccineName() +" "+ v.getVaccineCompany()));
-//	Collection<String> names =new HashSet<>();
+	service.searchByCostLessThan(1000,ResultView1.class).forEach(v->System.out.println(v.getVaccineCompany()+" "+ v.getVaccineName()));
+//	service.searchByCostLessThan(1000).forEach(v->System.out.println(v.getVaccineName() +" "+ v.getVaccineCompany()));
+////	Collection<String> names =new HashSet<>();
 //	names.add("COVSHIELD");
 //	names.add("NEGRO");
 //	names.add("ALI");

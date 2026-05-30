@@ -13,7 +13,8 @@ import org.springframework.stereotype.Service;
 
 import com.telidu.model.Vaccine;
 import com.telidu.repo.IVaccineRepo;
-import com.telidu.view.ResultView;
+import com.telidu.view.View;
+
 @Service
 public class VaccineService implements IVaccineService {
 private IVaccineRepo repo;
@@ -79,12 +80,25 @@ public void setRepo(IVaccineRepo repo) {
 //	Page<Vaccine> page= repo.findAll(pageable);
 //	return page.getContent();
 //}
-
 @Override
-public List<ResultView> searchByCostLessThan(Integer cost) {
+public <T extends View> List<T> searchByCostLessThan(Integer cost, Class<T> cls ) {
 	// TODO Auto-generated method stub
-	return repo.findByCostLessThan(cost);
+	return repo.findByCostLessThan(cost,cls);
 }
+
+
+
+//@Override
+//public List<ResultView> searchByCostLessThan(Integer cost) {
+//	// TODO Auto-generated method stub
+//	return null;
+//}
+
+//@Override
+//public List<ResultView> searchByCostLessThan(Integer cost) {
+//	// TODO Auto-generated method stub
+//	return repo.findByCostLessThan(cost);
+//}
 
 //@Override
 //public List<Vaccine> searchByCost(Integer cost) {
