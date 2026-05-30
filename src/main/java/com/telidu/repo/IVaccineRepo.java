@@ -20,11 +20,13 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
 import com.telidu.model.Vaccine;
+import com.telidu.view.ResultView;
 @Repository
 public interface IVaccineRepo extends JpaRepository<Vaccine, Integer> {
-	public List<Vaccine> findByCost(Integer cost);
-	public  List<Vaccine> findByCostIs(Integer cost);
-	public List<Vaccine> findByCostEquals(Integer cost);
-	public List<Vaccine> findByVaccineNameInAndCostBetween(Collection<String> names,Integer minCost,Integer maxCost);
+	List<ResultView> findByCostLessThan(Integer cost);
+//	public List<Vaccine> findByCost(Integer cost);
+//	public  List<Vaccine> findByCostIs(Integer cost);
+//	public List<Vaccine> findByCostEquals(Integer cost);
+//	public List<Vaccine> findByVaccineNameInAndCostBetween(Collection<String> names,Integer minCost,Integer maxCost);
 
 }

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.telidu.model.Vaccine;
 import com.telidu.repo.IVaccineRepo;
+import com.telidu.view.ResultView;
 @Service
 public class VaccineService implements IVaccineService {
 private IVaccineRepo repo;
@@ -80,28 +81,58 @@ public void setRepo(IVaccineRepo repo) {
 //}
 
 @Override
-public List<Vaccine> searchByCost(Integer cost) {
+public List<ResultView> searchByCostLessThan(Integer cost) {
 	// TODO Auto-generated method stub
-	return repo.findByCost(cost);
+	return repo.findByCostLessThan(cost);
 }
 
-@Override
-public List<Vaccine> searchByCostIs(Integer cost) {
-	// TODO Auto-generated method stub
-	return repo.findByCostIs(cost);
-}
+//@Override
+//public List<Vaccine> searchByCost(Integer cost) {
+//	// TODO Auto-generated method stub
+//	return null;
+//}
+//
+//@Override
+//public List<Vaccine> searchByCostIs(Integer cost) {
+//	// TODO Auto-generated method stub
+//	return null;
+//}
+//
+//@Override
+//public List<Vaccine> searchByCostEquals(Integer cost) {
+//	// TODO Auto-generated method stub
+//	return null;
+//}
+//
+//@Override
+//public List<Vaccine> searchByVaccineNameInAndCostBetween(Collection<String> names, Integer minCost, Integer maxCost) {
+//	// TODO Auto-generated method stub
+//	return null;
+//}
 
-@Override
-public List<Vaccine> searchByCostEquals(Integer cost) {
-	// TODO Auto-generated method stub
-	return repo.findByCostEquals(cost);
-}
-
-@Override
-public List<Vaccine> searchByVaccineNameInAndCostBetween(Collection<String> names, Integer minCost, Integer maxCost) {
-	// TODO Auto-generated method stub
-	return repo.findByVaccineNameInAndCostBetween(names, minCost, maxCost);
-}
+//@Override
+//public List<Vaccine> searchByCost(Integer cost) {
+//	// TODO Auto-generated method stub
+//	return repo.findByCost(cost);
+//}
+//
+//@Override
+//public List<Vaccine> searchByCostIs(Integer cost) {
+//	// TODO Auto-generated method stub
+//	return repo.findByCostIs(cost);
+//}
+//
+//@Override
+//public List<Vaccine> searchByCostEquals(Integer cost) {
+//	// TODO Auto-generated method stub
+//	return repo.findByCostEquals(cost);
+//}
+//
+//@Override
+//public List<Vaccine> searchByVaccineNameInAndCostBetween(Collection<String> names, Integer minCost, Integer maxCost) {
+//	// TODO Auto-generated method stub
+//	return repo.findByVaccineNameInAndCostBetween(names, minCost, maxCost);
+//}
 
 
 //@Override

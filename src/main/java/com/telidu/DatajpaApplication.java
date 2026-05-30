@@ -18,11 +18,12 @@ public class DatajpaApplication {
 	public static void main(String[] args) {
 	ConfigurableApplicationContext container=SpringApplication.run(DatajpaApplication.class, args);
 	VaccineService service=container.getBean(VaccineService.class);
-	Collection<String> names =new HashSet<>();
-	names.add("COVSHIELD");
-	names.add("NEGRO");
-	names.add("ALI");
-	service.searchByVaccineNameInAndCostBetween(names, 1, 2000).forEach(v->System.out.println(v));
+	service.searchByCostLessThan(1000).forEach(v->System.out.println(v.getVaccineName() +" "+ v.getVaccineCompany()));
+//	Collection<String> names =new HashSet<>();
+//	names.add("COVSHIELD");
+//	names.add("NEGRO");
+//	names.add("ALI");
+//	service.searchByVaccineNameInAndCostBetween(names, 1, 2000).forEach(v->System.out.println(v));
 //	service.searchByCostEquals(222).forEach(v->System.out.println(v));
 //	service.searchByCost(1).forEach(v->System.out.println(v));
 //	service.searchByCostIs(23).forEach(v->System.out.println(v));
