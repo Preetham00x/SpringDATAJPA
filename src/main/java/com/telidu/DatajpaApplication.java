@@ -13,6 +13,7 @@ import com.telidu.model.Vaccine;
 import com.telidu.service.VaccineService;
 import com.telidu.view.ResultView1;
 import com.telidu.view.ResultView2;
+import com.telidu.view.ResultView3;
 
 @SpringBootApplication
 public class DatajpaApplication {
@@ -20,7 +21,8 @@ public class DatajpaApplication {
 	public static void main(String[] args) {
 	ConfigurableApplicationContext container=SpringApplication.run(DatajpaApplication.class, args);
 	VaccineService service=container.getBean(VaccineService.class);
-	service.searchByCostLessThan(1000,ResultView2.class).forEach(v->System.out.println(v.getCost()));
+	service.searchByCostLessThan(1000,ResultView3.class).forEach(v->System.out.println(v.getId()));
+//	service.searchByCostLessThan(1000,ResultView2.class).forEach(v->System.out.println(v.getCost()));
 //	service.searchByCostLessThan(1000,ResultView1.class).forEach(v->System.out.println(v.getVaccineCompany()+" "+ v.getVaccineName()));
 //	service.searchByCostLessThan(1000).forEach(v->System.out.println(v.getVaccineName() +" "+ v.getVaccineCompany()));
 ////	Collection<String> names =new HashSet<>();
